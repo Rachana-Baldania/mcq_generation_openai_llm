@@ -13,7 +13,7 @@ import os
 #load_dotenv()
 
 # This is an LLMChain to create 10-20 multiple choice questions from a given piece of text.
-llm = OpenAI(api_key="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",model_name="gpt-3.5-turbo-16k", temperature=0, max_tokens=-1)
+llm = OpenAI(api_key="yourapikey",model_name="gpt-3.5-turbo-16k", temperature=0, max_tokens=-1)
 
 template = """
 Text: {text}
@@ -34,7 +34,7 @@ quiz_chain = LLMChain(
 )
 
 # This is an LLMChain to evaluate the multiple choice questions created by the above chain
-llm = OpenAI(api_key="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",model_name="gpt-3.5-turbo", temperature=0)
+llm = OpenAI(api_key="yourapikey",model_name="gpt-3.5-turbo", temperature=0)
 template = """You are an expert english grammarian and writer. Given a multiple choice quiz\
 You need to evaluate complexity of the questions and give a complete analysis of the quiz if the students 
 will be able to understand the questions and answer them. Only use at max 50 words for complexity analysis.
